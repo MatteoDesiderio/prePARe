@@ -1,23 +1,26 @@
 """
-
+Main program
 """
-import sys  
+import sys
 import time
 from PyQt5 import QtGui, QtCore
-from PyQt5 import QtWidgets as qtw 
+from PyQt5 import QtWidgets as qtw
+from menuActions import *
 
-def createMenus(mainMenu, names=["App Name", "File", "Edit", 
-                                 "Namelists", "Window", "Help"]):
+
+def create_menus(mainMenu, names=["App Name", "File", "Edit",
+                                  "Namelists", "Window", "Help"]):
     """
     Helper function to create menus stored in easily accessible
     dictionary
     """
-    fun = lambda n : "&" + n
-    menus = {n : mainMenu.addMenu(fun(n)) for n in names}
+    menus = {n: mainMenu.addMenu("&" + n) for n in names}
     return menus
 
-def assignActions(menus):
+
+def assign_actions(menus):
     pass
+
 
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
@@ -25,23 +28,46 @@ class Window(qtw.QMainWindow):
         self.screensize = screensize
 
         # window size and position
-        dx, dy = 500, 300 # size
-        self.setGeometry(*self.getWinGeomFromScreen(dx, dy))
+        self.setGeometry(*self.get_geom_from_screen())
         # create a status bar in the main window
-        self.statusBar() 
+        self.statusBar()
         # instantiate a menu bar
-        mainMenu = self.menuBar() 
+        mainMenu = self.menuBar()
         mainMenu.setNativeMenuBar(False)
 
-        menus = createMenus(mainMenu)
+        menus = create_menus(mainMenu)
 
-        # add some actions to the 
+        # add some actions to each menu
+        # App
+        quit = quit_action(self)
+        about = about_action(self)
+        menus["App Name"].addAction(about)
+        menus["App Name"].addAction(quit)
+        # File
+        new_file = new_file_action(self)
+        save_file = save_file_action(self)
+        menus["File"].addAction(new_file)
+        menus["File"].addAction(save_file)
 
-        self.show() # draw the main window
+        self.show()  # draw the main window
 
-    def getWinGeomFromScreen(self, dx, dy):
-        x, y = self.screensize.width(), self.screensize.height()
-        return int((x - dx) / 2), int((y - dy) / 2), dx, dy 
+    def get_geom_from_screen(self):
+        dx, dy = self.screensize.width(), self.screensize.height()
+        return 0, 0, dx, dy
+
+    def close_application(self):
+        """
+        Method to close app
+        """
+        # Add cases: did you save the project yet?
+        options = qtw.QMessageBox.No | qtw.QMessageBox.Yes
+        choice = qtw.QMessageBox.question(self, "Leaving Application",
+                                          "Are you sure?", options)
+
+        if choice == qtw.QMessageBox.Yes:
+            sys.exit()
+        else:
+            pass
 
 
 def run():
@@ -50,6 +76,6 @@ def run():
     GUI = Window(screen.size())
     sys.exit(app.exec_())
 
+
 if __name__ == "__main__":
     run()
-
