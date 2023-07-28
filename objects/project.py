@@ -7,7 +7,7 @@ from .par import Par
 
 
 class Project:
-    def __init__(self, par=None):
+    def __init__(self, par=Par()):
         self.par = par
 
     def save(self):

@@ -18,10 +18,6 @@ def create_menus(mainMenu, names=["App Name", "File", "Edit",
     return menus
 
 
-def assign_actions(menus):
-    pass
-
-
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
         super().__init__()
