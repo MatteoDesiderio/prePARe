@@ -34,11 +34,7 @@ class Par:
         names = _get_names(path)
         self.namelists = [Namelist.from_par_file(path, n) for n in names]
     
-    @staticmethod
-    def default():
-        par = Par()
-        par.from_default("defaults_include")
-        return par
+    
         
         
         

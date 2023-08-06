@@ -5,8 +5,7 @@ import sys
 from PyQt5 import QtGui, QtCore
 from PyQt5 import QtWidgets as qtw
 from menuActions import *
-from default_par import _defaultPar_
-import layouts
+from default_par import DefaultPar
 from PyQt5.QtGui import QPalette, QColor
 
 
@@ -32,8 +31,8 @@ def create_menus(mainMenu, names=["App Name", "File", "Edit",
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
         super().__init__()
-        
-        self.available_namelists = _defaultPar_.namelists
+        self.defaultPar = DefaultPar().default()
+        self.available_namelists = self.defaultPar.namelists
         self.names = [n.name for n in self.available_namelists]
         self.screensize = screensize
         
@@ -59,20 +58,17 @@ class Window(qtw.QMainWindow):
         menus["File"].addAction(new_file)
         menus["File"].addAction(save_file)
         
-        # create tab layout
-        #c = "gray"
-        #tab = layouts.build_tabs(self.names, 
-        #                         [PlaceHolder(c) for i in self.names])
-        #self.setCentralWidget(tab)
+        
         layout = qtw.QHBoxLayout()
         
-        leftFrame = qtw.QFrame()
-        leftFrame.setFrameShape(qtw.QFrame.StyledPanel)
+        leftScroll = self.defaultPar.getNamelistScroll()
+        leftScroll.setFrameShape(qtw.QFrame.StyledPanel)
+        
         mainFrame = qtw.QFrame()
         mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
 
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
-        splitter.addWidget(leftFrame)
+        splitter.addWidget(leftScroll)
         splitter.addWidget(mainFrame)
         #splitter.setStretchFactor(1, 5)
         #splitter.setStretchFactor(0, 1)

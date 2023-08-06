@@ -1,10 +1,7 @@
 """
 Project Class
 """
-from helpers import _get_raw_lines
 from .par import Par
-from .namelist import Namelist
-from default_par import _defaultPar_
 
 class Project:
     def __init__(self, par=Par()):

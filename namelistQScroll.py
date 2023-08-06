@@ -1,0 +1,1 @@
+from PyQt5 import QtWidgets as qtwclass NamelistQScroll(qtw.QScrollArea):        def __init__(self):        super().__init__()        
