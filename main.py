@@ -2,10 +2,21 @@
 Main program
 """
 import sys
-import time
 from PyQt5 import QtGui, QtCore
 from PyQt5 import QtWidgets as qtw
 from menuActions import *
+from default_par import _defaultPar_
+import layouts
+from PyQt5.QtGui import QPalette, QColor
+
+
+class PlaceHolder(qtw.QWidget):
+    def __init__(self, color):
+        super().__init__()
+        self.setAutoFillBackground(True)
+        palette = self.palette()
+        palette.setColor(QPalette.Window, QColor(color))
+        self.setPalette(palette)
 
 
 def create_menus(mainMenu, names=["App Name", "File", "Edit",
@@ -21,10 +32,14 @@ def create_menus(mainMenu, names=["App Name", "File", "Edit",
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
         super().__init__()
+        
+        self.available_namelists = _defaultPar_.namelists
+        self.names = [n.name for n in self.available_namelists]
         self.screensize = screensize
-
+        
         # window size and position
-        self.setGeometry(*self.get_geom_from_screen())
+        whole_screen = self.get_geom_from_screen()
+        self.setGeometry(*whole_screen)
         # create a status bar in the main window
         self.statusBar()
         # instantiate a menu bar
@@ -32,7 +47,6 @@ class Window(qtw.QMainWindow):
         mainMenu.setNativeMenuBar(False)
 
         menus = create_menus(mainMenu)
-
         # add some actions to each menu
         # App
         quit = quit_action(self)
@@ -44,7 +58,33 @@ class Window(qtw.QMainWindow):
         save_file = save_file_action(self)
         menus["File"].addAction(new_file)
         menus["File"].addAction(save_file)
+        
+        # create tab layout
+        #c = "gray"
+        #tab = layouts.build_tabs(self.names, 
+        #                         [PlaceHolder(c) for i in self.names])
+        #self.setCentralWidget(tab)
+        layout = qtw.QHBoxLayout()
+        
+        leftFrame = qtw.QFrame()
+        leftFrame.setFrameShape(qtw.QFrame.StyledPanel)
+        mainFrame = qtw.QFrame()
+        mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
 
+        splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
+        splitter.addWidget(leftFrame)
+        splitter.addWidget(mainFrame)
+        #splitter.setStretchFactor(1, 5)
+        #splitter.setStretchFactor(0, 1)
+        dx = whole_screen[3] / 2
+        splitter.setSizes([int(dx / 8), int(dx / 2)])
+        
+        layout.addWidget(splitter)
+
+        dummy = qtw.QWidget()
+        dummy.setLayout(layout)
+        
+        self.setCentralWidget(dummy)
         self.show()  # draw the main window
 
     def get_geom_from_screen(self):
