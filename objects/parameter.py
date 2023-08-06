@@ -5,8 +5,8 @@ import numpy as np
 from collections import OrderedDict
 
 def _get_fmt(value):
-    v = np.r_[value]
-    if v.dtype == str:
+    v = np.array([value])
+    if v.dtype.type == np.str_:
         s = "%s" % value
     elif v.dtype == bool:
         s = "%s" % ".true." if value else ".false."
@@ -50,8 +50,7 @@ class Formatter:
             res = "%s=%s" % (name, _get_fmt(value))
         
         return res
-            
-        
+
 
 class Parameter():
     def __init__(self, name, value, parent_namelist):
