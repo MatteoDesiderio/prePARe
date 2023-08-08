@@ -7,7 +7,7 @@ from PyQt5 import QtWidgets as qtw
 from menuActions import *
 from default_par import DefaultPar
 from PyQt5.QtGui import QPalette, QColor
-
+from namelistsFrame import NamelistQFrame
 
 class PlaceHolder(qtw.QWidget):
     def __init__(self, color):
@@ -60,25 +60,21 @@ class Window(qtw.QMainWindow):
 
         layout = qtw.QHBoxLayout()
 
-        leftScroll = self.defaultPar.getNamelistList()
-        #leftScroll.setFrameShape(qtw.QFrame.StyledPanel)
-
+        leftList = NamelistQFrame(self.defaultPar)
+        leftList.setFrameShape(qtw.QFrame.StyledPanel)
         mainFrame = qtw.QFrame()
-        #mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
+        mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
 
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
-        splitter.addWidget(leftScroll)
+        splitter.addWidget(leftList)
         splitter.addWidget(mainFrame)
         #splitter.setStretchFactor(1, 5)
-        #splitter.setStretchFactor(0, 1)
-        dx = whole_screen[3] / 2
-        splitter.setSizes([int(dx / 8), int(dx / 2)])
+        dx = whole_screen[3] 
+        splitter.setSizes([int(dx / 10), int(dx / 2)])
 
         layout.addWidget(splitter)
-
         dummy = qtw.QWidget()
         dummy.setLayout(layout)
-
         self.setCentralWidget(dummy)
         self.show()  # draw the main window
 
