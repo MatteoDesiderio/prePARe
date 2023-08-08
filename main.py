@@ -35,7 +35,7 @@ class Window(qtw.QMainWindow):
         self.available_namelists = self.defaultPar.namelists
         self.names = [n.name for n in self.available_namelists]
         self.screensize = screensize
-        
+
         # window size and position
         whole_screen = self.get_geom_from_screen()
         self.setGeometry(*whole_screen)
@@ -57,15 +57,14 @@ class Window(qtw.QMainWindow):
         save_file = save_file_action(self)
         menus["File"].addAction(new_file)
         menus["File"].addAction(save_file)
-        
-        
+
         layout = qtw.QHBoxLayout()
-        
-        leftScroll = self.defaultPar.getNamelistScroll()
-        leftScroll.setFrameShape(qtw.QFrame.StyledPanel)
-        
+
+        leftScroll = self.defaultPar.getNamelistList()
+        #leftScroll.setFrameShape(qtw.QFrame.StyledPanel)
+
         mainFrame = qtw.QFrame()
-        mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
+        #mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
 
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
         splitter.addWidget(leftScroll)
@@ -74,12 +73,12 @@ class Window(qtw.QMainWindow):
         #splitter.setStretchFactor(0, 1)
         dx = whole_screen[3] / 2
         splitter.setSizes([int(dx / 8), int(dx / 2)])
-        
+
         layout.addWidget(splitter)
 
         dummy = qtw.QWidget()
         dummy.setLayout(layout)
-        
+
         self.setCentralWidget(dummy)
         self.show()  # draw the main window
 

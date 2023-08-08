@@ -1,0 +1,1 @@
+from PyQt5 import QtWidgets as qtwclass NamelistStack(qtw.QStackedWidget):    def __init__(self):        super().__init__()        
