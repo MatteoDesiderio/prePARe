@@ -7,7 +7,8 @@ from PyQt5 import QtWidgets as qtw
 from menuActions import *
 from default_par import DefaultPar
 from PyQt5.QtGui import QPalette, QColor
-from namelistsFrame import NamelistQFrame
+from namelistsList import NamelistsList
+from namelistStack import NamelistStack
 
 class PlaceHolder(qtw.QWidget):
     def __init__(self, color):
@@ -57,30 +58,27 @@ class Window(qtw.QMainWindow):
         save_file = save_file_action(self)
         menus["File"].addAction(new_file)
         menus["File"].addAction(save_file)
-
-        layout = qtw.QHBoxLayout()
-
-        leftList = NamelistQFrame(self.defaultPar)
-        leftList.setFrameShape(qtw.QFrame.StyledPanel)
-        mainFrame = qtw.QFrame()
-        mainFrame.setFrameShape(qtw.QFrame.StyledPanel)
-
+        
+        mainStack = NamelistStack(self.defaultPar)
+        # will remove later, uncomment to see the space taken
+        # mainStack.setFrameShape(qtw.QFrame.StyledPanel)
+        
+        leftList = NamelistsList(self.defaultPar, mainStack)
+        # leftList.setFrameShape(qtw.QFrame.StyledPanel)
+        
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
         splitter.addWidget(leftList)
-        splitter.addWidget(mainFrame)
+        splitter.addWidget(mainStack)
         #splitter.setStretchFactor(1, 5)
         dx = whole_screen[3] 
         splitter.setSizes([int(dx / 10), int(dx / 2)])
 
-        layout.addWidget(splitter)
-        dummy = qtw.QWidget()
-        dummy.setLayout(layout)
-        self.setCentralWidget(dummy)
+        self.setCentralWidget(splitter)
         self.show()  # draw the main window
 
     def get_geom_from_screen(self):
         dx, dy = self.screensize.width(), self.screensize.height()
-        return 0, 0, dx, dy
+        return 0, 0, dx - 400, dy
 
     def close_application(self):
         """
@@ -95,7 +93,10 @@ class Window(qtw.QMainWindow):
             sys.exit()
         else:
             pass
-
+        
+    """def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Return:
+            print("yo")"""
 
 def run():
     app = qtw.QApplication(sys.argv)
