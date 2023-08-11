@@ -1,9 +1,8 @@
 from collections import OrderedDict
-from helpers import _get_raw_lines
-#from .par import Par
-from .parameter import Parameter
 import numpy as np
-
+from helpers import _get_raw_lines
+from .parameter import Parameter
+from .parameterFactory import dispatch
 
 class Namelist:
     def __init__(self, parameters=[]):
@@ -53,8 +52,7 @@ class Namelist:
                 new = self.parameters + other.parameters
                 return Namelist(new)
             else:
-                raise ValueError("Attempting to join parameters from " +
-                                 "different namelists")
+                raise ValueError("Attempting to join different namelists")
                 # return Par([self, other])
 
 
@@ -78,8 +76,8 @@ class Namelist:
             no_nline = line.replace("\n", "")
             if no_nline[0] != "!":
                 sel_lines.append(no_nline)
-                n, v = no_nline.rsplit("=")
-                param = Parameter(n, v, name)
+                nameP, valueP = no_nline.rsplit("=")
+                param = dispatch(nameP, valueP, name)
                 parameters.append(param)
                 
         return Namelist(parameters)
