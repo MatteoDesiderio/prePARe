@@ -56,6 +56,12 @@ class Parameter:
         self.name = name
         self.value = value
         self.parent_namelist = parent_namelist
+
+
+class ParameterSingle(Parameter):
+    def __init__(self, name, value, parent_namelist, dtype):
+        super().__init__(name, value, parent_namelist)
+        self.dtype = dtype
         
     def __repr__(self):
         f = Formatter(self.value, self.name)
@@ -63,13 +69,14 @@ class Parameter:
         # s = "%s=%s" % (self.name, self.value)
         return s 
 
-
-class ParameterSingle(Parameter):
-    def __init__(self, name, value, parent_namelist, dtype):
-        super().__init__(name, value, parent_namelist)
-
-
 class ParameterArray(Parameter):
     def __init__(self, name, value, parent_namelist, dtype):
         super().__init__(name, value, parent_namelist)
-    
+        self.dtype = dtype
+
+            
+    def __repr__(self):
+        f = Formatter(self.value, self.name)
+        s = f.get_formatted()
+        # s = "%s=%s" % (self.name, self.value)
+        return s 
