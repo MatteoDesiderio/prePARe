@@ -1,0 +1,11 @@
+{
+	"debugger_configurations":
+	[
+		{
+			"name": "Python: Attach using process id",
+			"type": "python",
+			"request": "launch",
+			"processId": "process id"
+		},
+	],
+}
