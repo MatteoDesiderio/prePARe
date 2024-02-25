@@ -10,14 +10,6 @@ from PyQt5.QtGui import QPalette, QColor
 from namelistsList import NamelistsList
 from namelistStack import NamelistStack
 
-class PlaceHolder(qtw.QWidget):
-    def __init__(self, color):
-        super().__init__()
-        self.setAutoFillBackground(True)
-        palette = self.palette()
-        palette.setColor(QPalette.Window, QColor(color))
-        self.setPalette(palette)
-
 
 def create_menus(mainMenu, names=["App Name", "File", "Edit",
                                   "Namelists", "Window", "Help"]):
@@ -58,19 +50,19 @@ class Window(qtw.QMainWindow):
         save_file = save_file_action(self)
         menus["File"].addAction(new_file)
         menus["File"].addAction(save_file)
-        
+
         mainStack = NamelistStack(self.defaultPar)
-        # will remove later, uncomment to see the space taken
+        # Uncomment to see the space taken:
         # mainStack.setFrameShape(qtw.QFrame.StyledPanel)
-        
+
         leftList = NamelistsList(self.defaultPar, mainStack)
         # leftList.setFrameShape(qtw.QFrame.StyledPanel)
-        
+
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
         splitter.addWidget(leftList)
         splitter.addWidget(mainStack)
         #splitter.setStretchFactor(1, 5)
-        dx = whole_screen[3] 
+        dx = whole_screen[3]
         splitter.setSizes([int(dx / 10), int(dx / 2)])
 
         self.setCentralWidget(splitter)
@@ -93,10 +85,7 @@ class Window(qtw.QMainWindow):
             sys.exit()
         else:
             pass
-        
-    """def keyPressEvent(self, e):
-        if e.key() == Qt.Key_Return:
-            print("yo")"""
+
 
 def run():
     app = qtw.QApplication(sys.argv)

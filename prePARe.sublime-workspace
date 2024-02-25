@@ -1,0 +1,1039 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sec",
+				"sections/si/results"
+			],
+			[
+				"inp",
+				"\\input{file}                                      "
+			],
+			[
+				"subsu",
+				"\\subsubsection{title}                             "
+			],
+			[
+				"tim",
+				"\\times                                            "
+			],
+			[
+				"ta",
+				"table                                             "
+			],
+			[
+				"Vec",
+				"THREE.Vector3"
+			],
+			[
+				"Line",
+				"THREE.LineBasicMaterial"
+			],
+			[
+				"Basi",
+				"THREE.MeshBasicMaterial"
+			],
+			[
+				"inn",
+				"innerHeight"
+			],
+			[
+				"QBox",
+				"QBoxGroup"
+			],
+			[
+				"sc",
+				"scroll"
+			],
+			[
+				"QFon",
+				"QFontMetrics"
+			],
+			[
+				"QC",
+				"QComboBox"
+			],
+			[
+				"emp",
+				"empty_like"
+			],
+			[
+				"spac",
+				"setGraphicsEffect"
+			],
+			[
+				"set",
+				"setTabShape"
+			],
+			[
+				"setM",
+				"setMovable"
+			],
+			[
+				"add",
+				"addTab"
+			],
+			[
+				"QT",
+				"QTabWidget"
+			],
+			[
+				"wi",
+				"widget"
+			],
+			[
+				"cli",
+				"clicked"
+			],
+			[
+				"setMar",
+				"setContentsMargins"
+			],
+			[
+				"ke",
+				"KeyPress"
+			],
+			[
+				"Eve",
+				"QEvent"
+			],
+			[
+				"key",
+				"keyPressEvent"
+			],
+			[
+				"setC",
+				"setCurrentIndex"
+			],
+			[
+				"grid",
+				"QGridLayout"
+			],
+			[
+				"margi",
+				"QMargins"
+			],
+			[
+				"spa",
+				"setSpacing"
+			],
+			[
+				"setWi",
+				"setWindowTitle"
+			],
+			[
+				"setW",
+				"setWindowTitle"
+			],
+			[
+				"setWindo",
+				"setWindowTitle"
+			],
+			[
+				"Q",
+				"QPalette"
+			],
+			[
+				"Qw",
+				"QWidget"
+			],
+			[
+				"QW",
+				"QWidget"
+			],
+			[
+				"layout",
+				"QStackedLayout"
+			],
+			[
+				"layo",
+				"QFormLayout"
+			],
+			[
+				"setTic",
+				"setTickInterval"
+			],
+			[
+				"ticks",
+				"setTickPosition"
+			],
+			[
+				"not",
+				"notchSize"
+			],
+			[
+				"notcher",
+				"setNotchTarget"
+			],
+			[
+				"step",
+				"setPageStep"
+			],
+			[
+				"Slider",
+				"SliderStepsChange"
+			],
+			[
+				"slider",
+				"sliderReleased"
+			],
+			[
+				"released",
+				"sliderReleased"
+			],
+			[
+				"Key_Rt",
+				"Key_Return"
+			],
+			[
+				"event",
+				"keyPressEvent"
+			],
+			[
+				"slide",
+				"QSlider"
+			],
+			[
+				"Ital",
+				"Italy"
+			],
+			[
+				"read",
+				"setReadOnly"
+			],
+			[
+				"ce",
+				"centralWidget"
+			],
+			[
+				"incre",
+				"setSizeIncrement"
+			],
+			[
+				"setS",
+				"setSuffix"
+			],
+			[
+				"Ce",
+				"centralWidget"
+			],
+			[
+				"sele",
+				"selectedText"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"on_te",
+				"on_text_changed"
+			],
+			[
+				"tex",
+				"textEdited"
+			],
+			[
+				"cha",
+				"selectionChanged"
+			],
+			[
+				"Insert",
+				"InsertAtBottom"
+			],
+			[
+				"pol",
+				"setInsertPolicy"
+			],
+			[
+				"currentI",
+				"currentIndexChanged"
+			],
+			[
+				"on",
+				"on_text_changed"
+			],
+			[
+				"chan",
+				"currentTextChanged"
+			],
+			[
+				"che",
+				"Checked"
+			],
+			[
+				"state",
+				"setCheckState"
+			],
+			[
+				"Al",
+				"AlignCenter"
+			],
+			[
+				"pixmap",
+				"QPixmap"
+			],
+			[
+				"pixm",
+				"setPixmap"
+			],
+			[
+				"setF",
+				"setFont"
+			],
+			[
+				"QM",
+				"QMainWindow"
+			],
+			[
+				"align",
+				"AlignVCenter"
+			],
+			[
+				"win",
+				"setWindowTitle"
+			],
+			[
+				"central",
+				"setCentralWidget"
+			],
+			[
+				"QP",
+				"QPushButton"
+			],
+			[
+				"QB",
+				"QPushButton"
+			],
+			[
+				"exe",
+				"exec_"
+			],
+			[
+				"QA",
+				"QApplication"
+			],
+			[
+				"mouse",
+				"mousePressEvent"
+			],
+			[
+				"mou",
+				"mousePressEvent"
+			],
+			[
+				"setWin",
+				"setWindowTitle"
+			],
+			[
+				"st",
+				"std"
+			],
+			[
+				"ma",
+				"mapToGlobal\tfunction"
+			],
+			[
+				"context",
+				"customContextMenuRequested\tfunction"
+			],
+			[
+				"left",
+				"LeftButton\tstatement"
+			],
+			[
+				"Qt",
+				"PyQt5\tmodule"
+			],
+			[
+				"edi",
+				"textEdited\tfunction"
+			],
+			[
+				"edit",
+				"QTextEdit\tclass"
+			],
+			[
+				"titl",
+				"setWindowTitle\tfunction"
+			],
+			[
+				"title",
+				"windowTitleChanged\tfunction"
+			],
+			[
+				"the",
+				"the_button_was_toggled\tfunction"
+			],
+			[
+				"click",
+				"clicked\tfunction"
+			],
+			[
+				"setMax",
+				"setMaximumSize\tfunction"
+			],
+			[
+				"mini",
+				"minimumSize\tfunction"
+			],
+			[
+				"SetF",
+				"setFixedSize\tfunction"
+			],
+			[
+				"gem",
+				"setGeometry\tfunction"
+			],
+			[
+				"center",
+				"setCentralWidget\tfunction"
+			],
+			[
+				"readlin",
+				"readlines\tfunction"
+			],
+			[
+				"act",
+				"addAction\tfunction"
+			],
+			[
+				"menu",
+				"menuBar\tfunction"
+			],
+			[
+				"tri",
+				"triggered\tfunction"
+			],
+			[
+				"quit",
+				"quitAction\tstatement"
+			],
+			[
+				"s",
+				"shortcut\tfunction"
+			],
+			[
+				"re",
+				"resize\tfunction"
+			],
+			[
+				"QI",
+				"QIcon\tclass"
+			],
+			[
+				"icon",
+				"windowIcon\tfunction"
+			],
+			[
+				"ttl",
+				"windowTitle\tfunction"
+			],
+			[
+				"wind",
+				"QMainWindow\tclass"
+			],
+			[
+				"Qa",
+				"QApplication\tclass"
+			],
+			[
+				"enumera",
+				"\\begin{enumerate}                                 \tlatex-document"
+			],
+			[
+				"set_",
+				"set_mode\tfunction"
+			],
+			[
+				"ca",
+				"seating_capacity"
+			],
+			[
+				"se",
+				"seating_capacity"
+			],
+			[
+				"m",
+				"max_speed"
+			],
+			[
+				"harz",
+				"harz_mol_perc\tstatement"
+			],
+			[
+				"list_lvl",
+				"list_lvl2\tstatement"
+			],
+			[
+				"t_inde",
+				"t_indexes_r"
+			],
+			[
+				"sta",
+				"stagyydata"
+			],
+			[
+				"T",
+				"T_profs\tstatement"
+			],
+			[
+				"load",
+				"load_BS"
+			],
+			[
+				"n",
+				"f_n_plus"
+			],
+			[
+				"eta",
+				"etaref"
+			],
+			[
+				"e",
+				"etaref"
+			],
+			[
+				"Va",
+				"ValueError"
+			],
+			[
+				"vs",
+				"vzstack"
+			],
+			[
+				"vz",
+				"vzstack"
+			],
+			[
+				"depth",
+				"depth_km"
+			],
+			[
+				"Get",
+				"GetTimeInterval"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/Anaconda-guienv.sublime-build",
+					""
+				],
+				[
+					"Packages/User/condaenv-guienv.sublime-build",
+					""
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/Anaconda-guienv.sublime-build",
+					""
+				],
+				[
+					"Packages/User/condaenv-guienv.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/condaenv-guienv.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Debugger: Ins",
+				"Debugger: Install Adapters"
+			],
+			[
+				"P",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"pytho",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"remo ",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"form",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"autoform",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package Control",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 160.0,
+		"history":
+		[
+			"import socket",
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 58551))\n",
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 57095))\n",
+			"import socket",
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 57095))\nimport socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 57095))\n",
+			"sublime.open(sections/introduction.tex)",
+			"clear",
+			"%ls",
+			"!!ls",
+			"ls",
+			"import socket; socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((\"localhost\", 54023))",
+			"cd geo_so",
+			"import numpy as no",
+			"%edit",
+			"python?",
+			"pwd",
+			"carica"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/matteodesiderio/PythonFun/prePARe/menuActions.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/prePARe.sublime-project",
+		"/Users/matteodesiderio/PythonFun/prePARe/main.py",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/si_template_2019.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/sections/si/model.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/sections/si/table3.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/sections/si/table2.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/sections/si/table1.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL paper/sections/si/results.tex",
+		"/Users/matteodesiderio/geo_software/StagPyScripts/compute_lambdas.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_latest/modal_abundances/BMO_caracas.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_latest/modal_abundances/MixPy50Bs50Xu08_1.tab",
+		"/Users/matteodesiderio/geo_software/Perple_X_latest/modal_abundances/histogram.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_latest/modal_abundances/test.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_latest/modal_abundances/test_1.tab",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/modal_abundances/aaa.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/modal_abundances/MixPy50Bs50Xu08.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/modal_abundances/geotherm.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/modal_abundances/PyXu08-stx11.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/MixBsPy.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/modal_abundances/convert_geotherm_dat.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/mix_comp.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/build_inputs.sh",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/PyXu08-stx11.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/test.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/werami_inputs.sh",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/pscontor.sh",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/vertex_inputs.sh",
+		"/Users/matteodesiderio/geo_software/Perplex_7.1.5/Perple_X_7.1.5_OSX_M-series/perplex_option.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/perplex_option.dat",
+		"/Users/matteodesiderio/Desktop/hi/Work/literature/PhDpart1/par+runmanagers/par_Dprim_LM100rhoB04.sed",
+		"/Users/matteodesiderio/geo_software/StagPyScripts/compute_deltarhos.py",
+		"/Users/matteodesiderio/.ssh/known_hosts",
+		"/Users/matteodesiderio/mandelbrodo.py",
+		"/Users/matteodesiderio/threeJSprojects/tutorial_2_docs/main.js",
+		"/Users/matteodesiderio/threeJSprojects/tutorial_2_docs copia/main.js",
+		"/Users/matteodesiderio/threeJSprojects/tutorial_1_docs/main.js",
+		"/Users/matteodesiderio/threeJSprojects/tutorial_1_docs/index.html",
+		"/Users/matteodesiderio/Desktop/script",
+		"/Users/matteodesiderio/.bash_profile",
+		"/Users/matteodesiderio/StagYY/tracers.f90",
+		"/Users/matteodesiderio/PythonFun/prePARe/namelistView.py",
+		"/Users/matteodesiderio/PythonFun/gui/bug/main.py",
+		"/Users/matteodesiderio/Documents/GitHub/MatteoDesiderio/StagYY/miscellaneous.f90",
+		"/Users/matteodesiderio/.ssh/config",
+		"/Users/matteodesiderio/Desktop/examples-vespa-stuff.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/exampleScroll.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/grid.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/vertical.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/stacked.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/namelistStack.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/namelistsList.py",
+		"/Users/matteodesiderio/Desktop/ua/prova.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_signals/slots_and_signals_6.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/horizontal.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/namelistsFrame.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/default_par.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/slider.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/grid_2.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/layout_1.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/layouts/nested.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/widgets.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/dial.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/qlineedit.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/floatspinbox.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/spinbox.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/combobox.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/qlabel.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/widgets/checkbox.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_signals/slots_and_signals_2.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/events/context_menus.py",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/Anaconda-guienv.sublime-build",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/events/hierarchy_1.py",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/matteodesiderio/PythonFun/gui/gui.sublime-project",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/events/events_1.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/events/events_2.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/events/context_menus_2.py",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/sublime_jedi.sublime-settings",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals_6.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals_5.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals_2.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals_3.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals_4.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/slots_and_signals.py",
+		"/Users/matteodesiderio/PythonFun/gui/fitzpatrick/hello_world.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/stx11ver.dat",
+		"/Users/matteodesiderio/PythonFun/prePARe/objects/par.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/helpers.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/objects/namelists.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/objects/project.py",
+		"/Users/matteodesiderio/PythonFun/prePARe/objects/defaults_include",
+		"/Users/matteodesiderio/PythonFun/prePARe/example.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson8.py",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/Users/matteodesiderio/PythonFun/gui/lesson2.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson3.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson1.py",
+		"/Users/matteodesiderio/Desktop/seismo_2/practicals/practical 8/SAC_scripting/FetchData-2020.314",
+		"/Users/matteodesiderio/Desktop/seismo_2/practicals/Practical 9/practical 9/data/stations",
+		"/Users/matteodesiderio/Desktop/seismo_2/practicals/practical 8/SAC_scripting/download.sh",
+		"/Users/matteodesiderio/Desktop/seismo_2/practicals/practical 8/SAC_scripting/taper.sm",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL/sections/results.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL/agujournaltemplate.tex",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL/sections/discussion.tex",
+		"/Users/matteodesiderio/Desktop/makefile.archer2.petsc",
+		"/Users/matteodesiderio/Desktop/makefile.archer.petsc",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/stx_bs_range.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/stx_profiles.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/stx_bs_compare.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/build_build.py",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/build_template.txt",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/stx21_solution_model.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/BOC-stx11.dat",
+		"/Users/matteodesiderio/geo_software/Perple_X_6.9.1_OSX/BOC-stx21.dat",
+		"/Users/matteodesiderio/geo_software/matte_perplex/perplex_option.dat",
+		"/Users/matteodesiderio/geo_software/PerpleX_scripts/perplex_source/bs_Xu08/bsXu08.dat",
+		"/Users/matteodesiderio/PythonFun/gui/lesson7.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson6.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson5.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson5-x.py",
+		"/Users/matteodesiderio/PythonFun/gui/lesson4.py",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/User/condaenv-guienv.sublime-build",
+		"/Users/matteodesiderio/Dropbox/Applicazioni/Overleaf/AGU GRL/sections/introduction.tex",
+		"/Users/matteodesiderio/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 122.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Debugger":
+	{
+		"height": 318.0
+	},
+	"output.Debugger Console":
+	{
+		"height": 318.0
+	},
+	"output.exec":
+	{
+		"height": 35.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 231.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "prePARe.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 52.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 562.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 330.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

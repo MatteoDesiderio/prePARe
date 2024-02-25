@@ -6,7 +6,9 @@ from .parameterFactory import dispatch
 
 class Namelist:
     def __init__(self, parameters=[]):
-
+        # TO DO: some method called when initialized (at the very least)
+        # that assigns any array in the list the correct shape (which is
+        # another parameter in the list)
         if not isinstance(parameters, list):
             raise TypeError
 
@@ -33,7 +35,8 @@ class Namelist:
 
         self.parameters = parameters
         self.name = name
-
+    
+    
     def __add__(self, other):
         if isinstance(other, Parameter):
             name = other.parent_namelist
