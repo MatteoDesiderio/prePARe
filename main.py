@@ -2,14 +2,14 @@
 Main program
 """
 import sys
-from PyQt5 import QtGui, QtCore
+from PyQt5 import QtCore
 from PyQt5 import QtWidgets as qtw
-from menuActions import *
 from default_par import DefaultPar
-from PyQt5.QtGui import QPalette, QColor
+from objects.par import Par
 from namelistsList import NamelistsList
 from namelistStack import NamelistStack
-
+from actions import (quit_action, about_action, new_file_action, 
+                     save_file_action, open_file_action)
 
 def create_menus(mainMenu):
     """
@@ -23,12 +23,21 @@ def create_menus(mainMenu):
 
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
-        super().__init__(*args, **kwargs)
+        super().__init__()
         
         # consider cramming all these into an instance of some class "Contents"
         self.path = None
-        self.par = Par().from_file("defaults_include")
-        self.available_namelists = self.defaultPar.namelists
+        
+        par = Par()
+        par.from_file("defaults_include")
+        self.parDefault = par
+        
+        par = Par()
+        par.from_file("defaults_include")
+        self.par = par
+        
+        
+        self.available_namelists = self.par.namelists
         self.names = [n.name for n in self.available_namelists]
         # ---------------------------------------------------------------------
         
@@ -46,21 +55,18 @@ class Window(qtw.QMainWindow):
         menus = create_menus(mainMenu)
         # add some actions to each menu
         # App
-        quit = quit_action(self)
-        about = about_action(self)
-        menus["App Name"].addAction(about)
-        menus["App Name"].addAction(quit)
+        menus["App Name"].addAction( about_action(self))
+        menus["App Name"].addAction(quit_action(self))
         # File
-        new_file = new_file_action(self)
-        save_file = save_file_action(self)
-        menus["File"].addAction(new_file)
-        menus["File"].addAction(save_file)
+        menus["File"].addAction(new_file_action(self))
+        menus["File"].addAction(open_file_action(self))
+        menus["File"].addAction(save_file_action(self))
 
-        mainStack = NamelistStack(self.defaultPar)
+        mainStack = NamelistStack(self.par)
         # Uncomment to see the space taken:
         # mainStack.setFrameShape(qtw.QFrame.StyledPanel)
 
-        leftList = NamelistsList(self.defaultPar, mainStack)
+        leftList = NamelistsList(self.par, mainStack)
         # leftList.setFrameShape(qtw.QFrame.StyledPanel)
 
         splitter = qtw.QSplitter(QtCore.Qt.Horizontal)
@@ -76,7 +82,12 @@ class Window(qtw.QMainWindow):
     def get_geom_from_screen(self):
         dx, dy = self.screensize.width(), self.screensize.height()
         return 0, 0, dx, dy
-
+    
+    def open_file(self):
+        path, _ = qtw.QFileDialog.getOpenFileName(self, "Open File", "/home/",
+                                                  "")
+         
+        
     def close_application(self):
         """
         Method to close app
@@ -90,6 +101,8 @@ class Window(qtw.QMainWindow):
             sys.exit()
         else:
             pass
+    
+    
 
 
 def run():
