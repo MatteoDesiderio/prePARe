@@ -11,12 +11,12 @@ from namelistsList import NamelistsList
 from namelistStack import NamelistStack
 
 
-def create_menus(mainMenu, names=["App Name", "File", "Edit",
-                                  "Namelists", "Window", "Help"]):
+def create_menus(mainMenu):
     """
     Helper function to create menus stored in easily accessible
     dictionary
     """
+    names=["App Name", "File", "Edit", "Namelists", "Window", "Help"]
     menus = {n: mainMenu.addMenu("&" + n) for n in names}
     return menus
 

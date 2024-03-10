@@ -13,28 +13,11 @@ class Par:
         s = "\n\n".join(namelists)
         return s
     
-    def from_default(self, path):
-        names = _get_names(path)
-        namelists = [Namelist.from_default(path, n) for n in names]
-        
-        self.namelists = _fill_in_array_shapes(namelists)
-    
     def from_file(self, path):
-        """
-        Clone Par from existing file
-
-        Parameters
-        ----------
-        path : TYPE
-            DESCRIPTION.
-
-        Returns
-        -------
-        None.
-
-        """   
         names = _get_names(path)
-        self.namelists = [Namelist.from_par_file(path, n) for n in names]        
+        namelists = [Namelist.from_file(path, n) for n in names]
+        
+        self.namelists = _fill_in_array_shapes(namelists)        
         
         
         

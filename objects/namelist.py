@@ -5,10 +5,6 @@ from .parameter import Parameter
 from .parameterFactory import dispatch
 
 
-def _join_split_arrays(parameters):
-    for p in parameters:
-        splitname = p.name.rsplit("(")
-
 class Namelist:
     def __init__(self, parameters=[]):
         if not isinstance(parameters, list):
@@ -71,7 +67,7 @@ class Namelist:
 
 
     @staticmethod
-    def from_default(path, name):
+    def from_file(path, name):
         raw_lines = _get_raw_lines(path)
         start = raw_lines.index("!&" + name + "\n") + 1
         sel_lines = []
@@ -88,22 +84,3 @@ class Namelist:
                       
         return Namelist(parameters)
                 
-    @staticmethod
-    def from_par_file(path, name):
-        """
-        As from_default, but from an existing par file
-
-        Parameters
-        ----------
-        path : TYPE
-            DESCRIPTION.
-        name : TYPE
-            DESCRIPTION.
-
-        Returns
-        -------
-        None.
-
-        """
-
-        pass
