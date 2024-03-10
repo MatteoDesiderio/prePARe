@@ -23,11 +23,14 @@ def create_menus(mainMenu):
 
 class Window(qtw.QMainWindow):
     def __init__(self, screensize):
-        super().__init__()
-        self.defaultPar = DefaultPar().default()
+        super().__init__(*args, **kwargs)
+        
+        # consider cramming all these into an instance of some class "Contents"
+        self.path = None
+        self.par = Par().from_file("defaults_include")
         self.available_namelists = self.defaultPar.namelists
         self.names = [n.name for n in self.available_namelists]
-        
+        # ---------------------------------------------------------------------
         
         self.screensize = screensize
 
