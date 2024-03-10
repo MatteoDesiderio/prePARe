@@ -17,7 +17,4 @@ class Par:
         names = _get_names(path)
         namelists = [Namelist.from_file(path, n) for n in names]
         
-        self.namelists = _fill_in_array_shapes(namelists)        
-        
-        
-        
+        self.namelists = _fill_in_array_shapes(namelists)
