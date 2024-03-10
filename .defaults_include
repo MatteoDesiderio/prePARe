@@ -1,0 +1,1136 @@
+! Default values for namelists used in par files
+!
+! Parameters corresponding to a each namelist (usually corresponding to a module)
+! are grouped together.
+! See the User Guide for additional information on the parameters.
+
+
+! main.f90
+! This namelist is *optional* - include only if you want both defaults and run-specific par files
+! &default_parameters_parfile
+par_name_defaultparameters='par_defaults'
+
+
+! control module
+! &switches
+quiet                 = .false.
+verbose               = .false.
+try_continue          = .false.
+compressible          = .false.
+multig_solve          = .true.
+dimensional_units     = .true.
+dens_strat            = .true.
+dens_actual           = .true.
+plates_analyse        = .false.
+melting               = .false.
+composition           = .false.
+phase_changes         = .false.
+total_pressure        = .false.
+chem_bm1              = .false.
+tracers               = .false.
+cont_rafts            = .false.
+cont_tracers          = .false.
+clb_experiment        = .false.
+dens_read_Fabio       = .false.
+visc_read_Fabio       = .false.
+atmosphere            = .false.
+old_rhs               = .false.
+random_repeatable     = .false.
+
+
+! grid module
+! &geometry
+nxtot           = 32
+nytot           = 32
+nztot           = 32
+shape           = 'cartesian'
+anti_squeeze    = .true.
+aspect_ratio(:) = 1.0
+zspacing_mode   = 'constant'
+dresl_topbot    = 1.0
+dresl_surf      = 1.0
+dresl_400       = 1.0
+dresl_660       = 1.0
+dresl_ppv       = 1.0
+dresl_cmb       = 1.0
+wresl_surf      = 0.1
+wresl_400       = 0.1
+wresl_660       = 0.1
+wresl_ppv       = 0.1
+wresl_cmb       = 0.1
+npbl            = 10
+r_cmb           = 3480.e3
+theta_position  = 'default'
+yy_MinOverlap   = .true.
+D_dimensional   = 2890.e3
+D_dim_top       = 0.0e3
+theta_center    = 1.57079633
+phi_center      = 0.
+align_grid_with_TTGwindows = .false. ! recommended for harz_bas_TTG_cc melting system
+
+
+! refstat module
+! &refstate
+ra0                            = 1.e5     ! physical parameters
+drho_surf                      = 3000.
+drho_cmb                       = 4337.
+drhoC_mode                     = 1
+core_cooling                   = .false.
+core_heating_from_above        = .true.   ! whether the core can be heated up by the mantle
+core_inner_insulating          = .false.   ! whether the inner core is isolated from the thermal budget
+core_model                     = 'simple'
+core_superheat                 = 0.0
+core_Kppm                      = 0.0
+core_Tmelt0                    = 5050     ! melting temperature of core material at centre of Earth
+core_tcond                     = 46.0
+core_heatcap                   = 9.57e12  ! updated 2018 to use Labrosse's Cp of 750
+core_Cp                        = 750.
+core_g0                        = 10.6823  ! 'g' at CMB. Set <=0 to use g_dimensional instead.
+core_x0                        = 0.05     ! fraction of light elements in the core
+core_dTl_dx                    = -2.04d4  ! rate change of core melting T with light element fraction
+core_stratified                = .false.  ! related to Takashi's stratified core parameterisation
+core_nsmax                     = 1000
+core_nsub_time                 = 10000
+density_map_mode               = .false.
+heterogeneous_heating          = .false.
+Io_tidal_heating               = .false.
+tidal_heating                  = .false.  
+Hs_zbot                        = 0.
+Hs_ztop                        = 1.
+Hs_bot                         = 0.
+Hs_top                         = 0.
+Hs_mode                        = 1
+Hs_eta_max                     = 2.3e14  ! Viscosity @ max. tidal heating. Appropriate to Europa's ice.
+tcond_law                      = 1
+expotcond                      = 0.5
+tcond_rT                       = 0.0
+rtcond_z                       = 1.0
+rtcond_prim                    = 1.0
+rtcond_basalt                  = 1.0
+topregion_adiabatic            = .false.
+topregion_z                    = 0.0
+topregion_thalf                = BIG
+Birch_Murnaghan                = .true.
+gravity_3D                     = .false.
+gravity_z                      = .false.
+zgravity_law                   = 0
+K0(:,:)                        = 210.e9   ! dimensional (Pa)
+Kp(:,:)                        = 3.9
+Kpp(:,:)                       = 0.0
+perplex_properties             = .false.
+perplex_dT                     = 100.     ! temperature smoothing increment
+perplex_hz_file                = 'harzburgite.dat'
+perplex_bs_file                = 'basalt.dat'
+perplex_pr_file                = 'primordial.dat'
+perplex_py_file                = 'pyrolite.dat'
+propmix_type                   = 'VRH'   ! Voigt-Reuss-Hill
+Di0                            = 1.18
+gr_s(:,:)                      = 1.3
+Tref_surf                      = 1600.0
+rhoref_surf(:)                 = (/3240.,3080.,2900.,2900.,3080.,3080.,7000.,0.001/) ! ol, pxgt, olmelt, pxgtmelt, qz, prim, metal,air
+q_gamma(:,:)                   = 1.0
+q_gamma(1,3:4)                 = -1.3
+delT0_expan(:,:)               = 6.0
+ak_expan(:,:)                  = 1.4
+ex_tkappa(:,:)                 = 1.0
+air_density                    = 1.e-3    ! dimensional or nondimensional
+tcond_dimensional              = 3.0
+dens_dimensional               = 3300.
+Cp_dimensional                 = 1200.
+Cp_dimensional_basalt          = 1000.
+Cp_dimensional_TTG             = 1000.
+deltaT_dimensional             = 2500.0   ! needed for scaling melting solidus
+g_dimensional                  = 9.81
+expan_dimensional              = 3.e-5
+drho_thermal                   = 0.125    ! ALPHA * DELTAT
+nradiogenic                    = 1
+Rh(:)                          = 0.0
+Rh_halflife(:)                 = BIG
+Rh_tstart                      = 0.
+c_dependent_heating            = .false.
+dHeat_dprim                    = 1.0
+dHeat_dbasalt                  = 1.0
+phase_assemblage_varies_with_C = .false.
+pressure_reference_point       = 'SurfaceAverage'
+pressure0                      = 0.0
+track_ocean_mass               = .false.
+InitialOceanMass               = 1.37e21 ! kg
+
+
+! init module
+! &t_init
+blthick            = 50.e3       ! initialization
+imode_t            = 'cells'
+Tinit_use_ref_comp = .false.
+amp_t              = 0.00
+t0_init            = 1600.0
+z0_t               = 0.5
+w0_t               = 0.5
+dip                = 0.0
+length             = 0.0
+spreading_age0     = 0.0
+ocean_age          = 60.0        ! in million years; for Guizhi's T init
+cont_thick         = 100.e3      ! in metres; for Guizhi's T init
+perturbe           = .false.
+perturbe_height(1) = 0.0
+perturbe_height(2) = 0.1
+perturbe_scale     = 0.1
+perturbe_rad       = 0.2
+perturbe_xy(1)     = 0.5
+perturbe_xy(2)     = 0.5
+SphereDT           = 0.1
+SphereRadius       = 0.1
+
+! timestep module
+! &timein
+alpha_adv                  = 0.5
+alpha_diff                 = 1.0
+nsteps                     = 1
+nwrite                     = 1
+dt_write                   = BIG
+PBSTimeRequested           = 1000000. ! hours
+iord                       = 2
+advection_scheme           = 'TVD'
+TVD_limiter                = 1.       ! 0=donor cell, 1=Minmod, 2=Superbee, 3=Woodward
+stoptime                   = 'hhmm'
+finish_at_time             = BIG
+diffusion_implicit         = .false.
+diffusion_multigrid        = .true.
+diffusion_diagnostics      = .false.
+diffusion_beta             = 1.0
+diffusion_errmax           = 1.e-4
+diffusion_maxits           = 100
+diffusion_alpha            = 0.7
+diffusion_nrelax           = 6
+diffusion_maxcoarseits     = 200
+density_jump_stabilization = .false.
+density_jump_theta         = 1.0
+density_jump_simplify      = .true.
+impacts                    = .false. ! Ongoing impacts throughout the simulation
+impacts_history            ='LHB'    ! impact history: 'single' or 'LHB' (late heavy bombardment)
+impacts_sim_start_Gyr      = 4.5     ! start time of the simulation in Gyr before present
+impacts_transition_Gyr     = 4.1     ! transition time of the sawtooth (to late heavy bombardment)
+impacts_r_min              =  10.e3  ! minimum impactor radius (for 'LHB' history)
+impacts_r_max              = 500.e3  ! maximum impactor radius (for 'LHB' history)
+impacts_powerlaw_slope     = 3.5     ! power-law exponent: dN/dR = const*R^(-slope)
+impacts_mass_LHB           = 1.e22   ! Total kg of post-transition impactors (Marchi et al (2014))
+impactor_r                 = 1000.e3 ! radius of a single impactor (for 'single' history)
+impacts_v_ratio            = 1.0     ! ratio v_impactor/v_escape
+impacts_r_ratio_isocore    = 1.44225 ! ratio r_isocore/r_impactor
+impacts_energy_gamma       = 0.3     ! energy conversion efficiency; 0.3 from [O'Keefe & Ahrens, 1977]
+impactors_Fe_enriched      = .false. ! whether impactors are enriched in Fe (as they actually are)
+impactors_differentiated   = .false. ! whether impactors are/become differentiated
+impactors_Fe_fraction      = 0.125   ! Fe fraction for determining enrichment or core size
+impacts_Tmax_liquidus      = .false. ! whether magma pond T is limited to the liquidus
+impacts_read_file          = 'impacts.dat'
+random_seed_value          = 31767   ! Sets the random seed when random_reapeatable=.true.
+
+
+! io module, hdf5_mod module
+! &ioin
+input_file                      = 'null'
+input_frame                     = 1
+output_format                   = 'auto'    ! options are 'auto','old','hdf' or 'both'
+input_format                    = 'auto'    ! options are 'auto','old' or 'hdf'
+tseries_format                  = 'text'    ! options are 'auto','text','hdf' or 'both'
+rprof_format                    = 'text'    ! options are 'auto','text','hdf' or 'both'
+nonhdf_in_hdf_folder            = .false.
+hdf5_input_folder               = "+hdf5"
+hdf5_output_folder              = "+hdf5"
+MaxFileSizeAllowed              = 100000000 ! bits
+MaxFileSizeAllowedTra           = 100000000 ! bits
+restart_from_meshed_fields_only = .false.
+compress_hdf5                   = .false.
+overwrite_old_files             = .false.
+t_write                         = .true.
+t_spectrum_write                = .false.
+rho_spectrum_write              = .false.
+vp_write                        = .false.
+vp_read                         = .false.
+g_write                         = .false.
+topo_write                      = .false.
+c_write                         = .false.
+bs_write                        = .false.
+hz_write                        = .false.
+cc_write                        = .false.
+cont_write                      = .false.
+TTG_write                       = .false.
+rheo_write                      = .false.
+f_write                         = .false.
+MeltDiag_write                  = .false.
+w_write                         = .false.
+tcond_write                     = .false.
+MORBprof_write                  = .false.
+eta_write                       = .false.
+ph_write                        = .false.
+rho_write                       = .false.
+nrho_write                      = .false.
+vm_write                        = .false.
+stress_write                    = .false.
+stress_axis_write               = .false.
+edot_write                      = .false.
+strain_write                    = .false.
+tra_write                       = .false.
+delete_old_trafiles             = .true.    ! zero old tracer files to save space
+delete_old_nonhdf_files         = .false.   ! zero old files that are not in HDF5 format
+save_file_framestep             = 10        ! but save some, every framestep
+trapercell_write                = .false.
+ah_write                        = .false.
+vd_write                        = .false.
+age_write                       = .false.
+ageEI_write                     = .false.
+nmelt_write                     = .false.
+nEI_write                       = .false.
+residue_write                   = .false.
+air_write                       = .false.
+primordial_write                = .false.
+grainsize_write                 = .false.
+oxides_write                    = .false.
+hpe_write                       = .false.
+impactor_write                  = .false.
+H_write                         = .false.
+metal_write                     = .false.
+water_write                     = .false.
+K_Ar_write                      = .false.
+Sm_Nd_write                     = .false.
+U_Th_Pb_He_write                = .false.
+Hf_W_write                      = .false.
+carbon_write                    = .false.
+nitrogen_write                  = .false.
+torpol_write                    = .false.
+divvor_write                    = .false.
+svel_write                      = .false.
+pvel_write                      = .false.
+bvel_write                      = .false.
+lyap_write                      = .false.
+crust_write                     = .false.
+trarho_write                    = .false.
+iron_write                      = .false.
+heatflux_write                  = .false.
+heatflux_spectrum_write         = .false.
+h2oflux_write                   = .false.
+write_32bit_precision           = .false.
+output_file_stem                = 'output'
+
+
+! iterpars module
+! &iteration
+alpha_mom            = 0.7
+alpha_cont           = 0.9
+maxits               = 50
+minits               = 1
+errmax               = 1.e-3
+redblack             = .false.
+relax_kernel         = 'classic'
+extra_lid_relax      = .false.
+nlid_relax           = 1
+tlid                 = 0.2
+extra_hiresid_relax  = .false.
+nhi_relax            = 1
+normalize_res_by_eta = .false.
+
+
+! multig module
+! &multi
+maxcoarseits              = 200
+nrelax1                   = 3
+nrelax2                   = 3
+ncores_per_node           = 8         ! #cores per node
+ncells_per_core_opt_xnode = 1024      ! optimal #points/core, cross-node communication 
+ncells_per_core_opt_same  = 64        ! optimal #points/core, same-node communication
+idle_duplicates           = .false.
+direct_coarse_soln        = .false.
+more_coarse_its           = .true.
+f_cycle                   = .false.
+matrix_dep_pinterp        = .true.
+matrix_dep_vinterp        = .false.
+nhmin                     = 4
+nzmin                     = 4
+nzpnmin                   = 1
+alpha_multi               = 1.0
+auto_tune_parallelisation = .false.   ! Determine optimal #cells/core, then stop
+
+
+! directsol module
+! &directsol_options
+direct_solver_type = 'auto'
+
+
+! bcs module
+! &boundaries
+zero_surface_mean_flow     = .false.
+botT_mode                  = 'iso'        ! boundary conditions
+botT_val                   = 0.0
+topT_mode                  = 'isothermal'
+Tsurf_eqm                  = 300.
+topT_val                   = 300.
+topT_locked_subsolar       = 300.
+topT_locked_farside        = 200.
+atmosphere_heatloss_factor = 1.0          ! reduction of radiative surface heat loss by atmosphere (> = 1)
+free_surface_Duretz        = .false.
+air_layer                  = .false.
+air_thickness              = 0.1
+air_threshold              = 0.8          ! if C>0.8, consider it to be air
+outT_val                   = -1.0
+x_patch                    = 0.5
+y_patch                    = 0.5
+r_patch                    = 0.1
+vx_patch                   = 0.0
+dT_patch                   = 0.0
+x_bc                       = 'ww'
+y_bc                       = 'ww'
+topV_mode                  = 'free-slip'
+x_spread                   = 0.0
+v_spread                   = 0.0
+nx_plates                  = 2
+ny_plates                  = 2
+botV_mode                  = 'free-slip'
+v_mantle                   = 0.0
+virtual_bndry_distance     = -1.          ! negative -> domain_depth
+plateid_file_stem          = 'pid'        ! file stem for plate id
+vbc_file_stem              = 'vbc'        ! file stem for velocity boundary conditions
+vbc_file_interval_Myr      = 1.0          ! interval between velocity BC files
+vbc_file_start_Myr         = -70.         ! how long ago (in Myr) the first file contains
+platerecon_time_origin     = 0.0          ! things for Lea's plate reconstruction boundary conditions
+platerecon_time_init       = 0.0
+platerecon_time_end        = 0.0
+BottomPhaseChange          = .false.  ! for phase change at either or both boundaries
+BotPphase                  = 1.0
+TopPhaseChange             = .false.
+TopPphase                  = 1.0
+vsmean                     = 1000.0       ! corresponds to a transit time of 0.001 - not too bad usually
+
+
+! contstuff module
+! &continents
+ncont                       = 1
+polygon_name                = 'polygon'
+cont_crust                  = .false.
+rafts_move                  = .false.
+cont_radius(:)              = 0.1
+cont_startpos(:,:)          = 0.5
+cont_offsetplot             = .true.
+cont_collideaction          = 'ignore'
+cont_Biot                   = 1.e6
+cont_thickness              = 100.e3
+nsuture                     = 1
+phanerozoic_belts           = .false.
+phanerozoic_sutures         = .false.
+proterozoic_belts           = .false.
+proterozoic_sutures         = .false.
+random_sutures              = .false.
+ThreeD_sutures              = .false.
+suture_fraction(1)          = 0.5              ! 50% archean, 50% proterozoic
+suture_fraction(2)          = -1.              ! disabled by default
+cont_surf_frac              = 0.3              ! Continents cover 30% of the surface
+tapered_edges               = .false.
+taper_angle                 = 0.0
+distribution_mode           = 'auto'
+imode_cont                  = 'simple'
+patchy_conts                = .false.
+                                               ! correlation added CJ_Sep14
+fourier_coeff               = .false.
+n_harmonics                 = 10
+z_temp(:,1)                 = (/0.121, 0.086/)
+z_comp(:,1)                 = (/0.0173, 0.0/)
+
+
+! viscostuff module
+! &viscosity
+E_eta(:,:,:)                     = 0.0
+V_eta(:,:,:)                     = 0.0
+n_eta(:,:)                       = 3.5
+n_gbs(:,:)                       = 2.0
+stress0_eta(:,:)                 = 1.0
+stress0_gbs(:,:)                 = 1.0
+stress0_Peierls(:,:)             = 1.0
+Peierls_stress(:,:)              = 1.0
+Pdecay_V(:,:,:)                  = BIG
+eta0                             = 1.0
+E_eta_Tmean                      = 0.0
+PressureDepRheology              = .false.
+PressureDepVact                  = .false.
+eta_UseRefstatePressure          = .true.
+T0_Tmean                         = 0.5
+ietalaw                          = 1
+d0_eta                           = 0.5
+T0_eta                           = 0.5
+Ts_eta                           = -1.0  ! negative means same as surface T
+eta_max                          = 1.e5
+eta_min                          = 1.e-5
+eta_minmax_depthmax              = BIG
+eta_minmax_notapply2air          = .false.
+eta_air                          = 1.
+diffusion_creep                  = .true.
+dislocation_creep                = .false.
+gbs_creep                        = .false.
+Peierls_creep                    = .false.
+plasticity                       = .false.
+cohesion_eta                     = BIG
+frictionCoeff_eta                = BIG
+stressY_eta                      = BIG
+dstressY_eta_dp                  = 0.0
+deta_p(:,:)                      = 1.0
+deta_p_correct_jumps             = .false.
+phase_dep_Eeta                   = .false.
+rheological_transition_solid     = .false.
+rheological_threshold_weak_phase = 0.3
+melt_phase_has_solid_viscosity   = .false.
+strainweaken_YS                  = .false.
+strainweaken_YS_emin             = 0.
+strainweaken_YS_emax             = 1.
+strainweaken_YS_factor           = 0.1
+
+visc_jump                        = .false.
+z_eta_jump(2)                    = 0.0   ! < z_eta_jump(1)
+z_eta_jump(1)                    = 0.228 ! 660km depth
+dzeta                            = 30.0
+
+impose_radial_visc               = .false.
+planet_visc_name                 = 'visc_Venus.txt'
+eta_scale                        = 1.e21
+eta_scale_max                    = 1.e25
+
+c_dependent_yieldpars            = .false.
+
+etalaw_primordial                = 1
+deta_primordial                  = 1.0
+c0eta_primordial                 = 0.0
+cohesion_primordial              = BIG
+frictionCoeff_primordial         = BIG
+stressY_primordial               = BIG
+dstressY_primordial              = 0.0
+
+etalaw_basalt                    = 1
+deta_basalt                      = 1.0
+c0eta_basalt                     = 0.0
+cohesion_basalt                  = BIG
+frictionCoeff_basalt             = BIG
+stressY_basalt                   = BIG
+dstressY_basalt                  = 0.0
+
+etalaw_TTG                       = 1
+deta_TTG                         = 1.0
+c0eta_TTG                        = 0.0
+cohesion_TTG                     = BIG
+frictionCoeff_TTG                = BIG
+stressY_TTG                      = BIG
+dstressY_TTG                     = 0.0
+
+etalaw_cc                        = 1
+deta_cc                          = 1.0
+c0eta_cc                         = 0.0
+cohesion_cc                      = BIG
+frictionCoeff_cc                 = BIG
+stressY_cc                       = BIG
+dstressY_cc                      = 0.0
+
+etalaw_ccrust                    = 1
+deta_ccrust                      = 1.0
+c0eta_ccrust                     = 0.0
+cohesion_ccrust                  = BIG
+frictionCoeff_ccrust             = BIG
+stressY_ccrust                   = BIG
+dstressY_ccrust                  = 0.0
+
+etalaw_archean                   = 1
+deta_archean                     = 1.0
+c0eta_archean                    = 0.0
+cohesion_archean                 = BIG
+frictionCoeff_archean            = BIG
+stressY_archean                  = BIG
+dstressY_archean                 = 0.0
+
+etalaw_phanerozoic               = 1
+deta_phanerozoic                 = 1.0
+c0eta_phanerozoic                = 0.0
+cohesion_phanerozoic             = BIG
+frictionCoeff_phanerozoic        = BIG
+stressY_phanerozoic              = BIG
+dstressY_phanerozoic             = 0.0
+
+etalaw_proterozoic               = 1
+deta_proterozoic                 = 1.0
+c0eta_proterozoic                = 0.0
+cohesion_proterozoic             = BIG
+frictionCoeff_proterozoic        = BIG
+stressY_proterozoic              = BIG
+dstressY_proterozoic             = 0.0
+
+etalaw_metal                     = 1
+deta_metal                       = 1.0
+c0eta_metal                      = 0.0
+cohesion_metal                   = BIG
+frictionCoeff_metal              = BIG
+stressY_metal                    = BIG
+dstressY_metal                   = 0.0
+
+etalaw_water                     = 1
+r_etalaw_water                   = 1.0
+deta_water                       = 1.0
+c0eta_water                      = 0.0
+dYS_water                        = 0.0
+
+eta_melt                         = .false.
+etalaw_melt                      = 1
+deta_melt                        = 1.0
+
+mean_T_eta                       = .false.
+vertonly_eta                     = .false.
+horzonly_eta                     = .false.
+weak_line                        = .false.
+weak_dx                          = 0.1
+weak_dz                          = 0.05
+weak_eta                         = 1.0
+strong_cont_rafts                = .false.
+strong_eta                       = 1.0
+strong_dz                        = 0.05
+aniso_visc_shear                 = .false.  ! previously called bmoore_eta
+aniso_visc_normal                = .false.
+eta_conv                         = 0.01
+alpha_eta                        = 1.0
+maxits_eta                       = 20
+visc_interp_law                  = 'g'
+
+
+! grainsizeparameters module
+! &grainsize
+! Grain Size evolution parameters (based on Hiraga 2010, Bercovici and Ricard 2012)
+RenormRheoParsToAnticipateGS = .false.
+fastgrowth                   = .false.
+chiUM                        = 1.0
+chiLM                        = 1.0
+ftopGS                       = 1.e-5                          ! not fluxes, these are f parameters following Rozel 2010 approach
+fbotGS                       = 1.e-5
+GS_ForcedPiezometric         = .false.                        ! Forces the grain size at its stress-dependent state
+GS_TwoPhases                 = .false.                        ! Two phase for Zener pinning
+GS_PiezometerModel           = 'homogeneous'                  ! Temperature-pressure-dependent piezometer ?
+grainsize0_eta               = 1.                             ! microns, the ref grain size used in the viscosity law
+grainsize_n_eta              = 3.0                            ! Grain size exponent in the viscosity law in diffusion creep
+grainsize_n_gbs              = 2.0                            ! Grain size exponent in the viscosity law in grain boundary sliding
+graingrowth_k                = 1.
+graingrowth_p                = 4.
+graingrowth_E                = 300.e3
+grainreduction_C             = 1.
+transition_depth_GS(1)       = 410.e3                         ! Olivine - wadsleyite
+transition_depth_GS(2)       = 500.e3                         ! wadsleyite - ringwoodite
+transition_depth_GS(3)       = 660.e3                         ! Upper to tower mantle
+transition_depth_GS(4)       = 2740.e3                        ! PV to PPV
+GSAfterPhaseTrans            = 5.e0                           ! microns
+curvDownThrough660           = 5.e0                           ! miconrs
+GS_fG0                       = 1.e-2                          ! Partitioning parameter (cf Rozel 11)
+GS_fI0                       = 0.0                            ! 1.e-2 ! Partitioning parameter (cf Bercovici 12)
+GSD_sigma                    = 0.8                            ! width of the gaussian distributions of grain size
+GS_Lambda2                   = exp((2.0**2*GSD_sigma**2)/2.0) ! constant introduced in Rozel 11
+GS_Lambda3                   = exp((3.0**2*GSD_sigma**2)/2.0) ! constant introduced in Rozel 11
+GS_Lambda4                   = exp((4.0**2*GSD_sigma**2)/2.0) ! constant introduced in Rozel 11
+! GS_Lambda3mm               = exp(((3.0-grainsize_n_eta)**2*GSD_sigma**2)/2.0)
+GG_k0(1)                     = 2.49813e7                      ! micron^2/h -> only works for p = 2
+GG_p(1)                      = 2.0
+GG_E(1)                      = 2.e5                           ! J/mol
+GS_InitSize(1)               = 1e2                            ! microns
+GS_gamma(1)                  = 1.e6                           ! 1 J/m^2 = 1 Pa m^3 / m^2 = 1e6 Pa micron
+GG_k0(2)                     = 2.49813e7                      ! micron^2/h -> only works for p = 2
+GG_p(2)                      = 2.0
+GG_E(2)                      = 2.e5                           ! J/mol
+GS_InitSize(2)               = 1e2                            ! microns
+GS_gamma(2)                  = 1.e6                           ! 1 J/m^2 = 1 Pa m^3 / m^2 = 1e6 Pa micron ! see Skemer and Karato, 2007 !!!
+curv_k0                      = 74943.9                        ! micron^2/h -> only works for p = 2
+curv_E                       = 2.e5                           ! assumed identical to GG
+curv_q                       = 1.5
+curv_gamma                   = 1.e6                           ! assumed identical to individual GS
+curv_Init                    = minval(GS_InitSize(1:2))
+GrainSizeIntrudedBasalt      = 500.
+GrainSizeEruptedBasalt       = 500.
+GrainSizeIntrudedTTG         = 500.
+GrainSizeEruptedTTG          = 500.
+
+! comppars module
+! &compin
+ra_comp(:)         = 0.0
+imode_comp         = 'constant'
+zcomp              = 0.5
+dzcomp             = 0.1
+amp_comp           = 0.0
+lenardic_filter    = .false.
+outC_val           = -1.0
+mode_init_overturn = 'linear'
+Fe_cont            = 0.1   ! mean Fe content for imode_comp='overturn'
+Fe_eut             = 0.8   ! Fe at eutectic for imode_comp='overturn'
+
+
+! meltstuff module
+! &melt
+melt_segregation                  = .false.
+harzburgite_melts                 = .false.
+fractional_xtallisation_n_melting = .false.
+metal_melts                       = .false.
+melt_phase_systems                = .false.
+magma_effective_tcond             = .false.
+magma_tcond_max                   = 1.e10
+magma_tcond_mode                  = 'constant'
+magma_topTBL_const                = 1.e-7      ! set this to 0 to switch off thin top TBL T jump
+f_rheoltrans                      = 0.35       ! rheological transition melt fraction
+df_rheoltrans                     = 0.05       ! rheological transition width
+solidus_function                  = 'simple'
+c_dependent_solidus               = .false.
+p_dependent_solidus_liquidus      = .false.
+solidus_UseRefstatePressure       = .true.
+Boussinesq_solidus_correction     = .false.    ! remove adiabat from solidus & liquidus curves when Boussinesq
+Cf_dependent_Tmelting             = .false.    ! supercedes c_dependent_solidus
+suppress_asth                     = .false.
+ra_melt                           = 0.0
+mr_melt                           = 1.e6
+imode_melt                        = 'whatever'
+amp_melt                          = 0.02
+Tsol0                             = 1600.        ! in K if dimensional
+dTsol_dz                          = 4.0          ! in K/km if dimensional
+latent_heat                       = 600.e3
+latent_heat_basalt                = 380.e3
+latent_heat_TTG                   = 300.e3
+HalfH2OSatBasedTTGform            = .false.
+H2OThresholdBasedTTGform          = .true.
+H2OThresholdTTGform               = 0.05 ! weight per cent (0.1wpc=1000ppm)
+forbidTTGformation                = .false.
+eruption                          = .false.
+intrusion                         = .false.
+erupt_any_composition             = .false.
+erupt_fraction                    = 1.0
+intrude_fraction                  = 1.0
+erupt_fraction_TTG                = 1.0
+intrude_fraction_TTG              = 1.0
+MagmaSelfEruptingTimeScale        = 1.e20      ! in years: high value=>intruded basalt never erupts
+depletion_fraction                = 0.5
+erupt_mode                        = 'all'
+erupt_threshold                   = 0.0
+erupt_T_lith                      = 1400.
+intrude_position                  = 'surface'
+d_erupt_Earth                     = 1.0
+d_intrude                         = 0.0        ! intrusion depth rather than +ve buoyancy depth
+freeze_surface                    = .false.
+outF_val                          = -1.0
+deltaTsol_depletion_dimensional   = 60.        ! increase of solidus with basal depletion (K)
+deltaTsol_water_dimensional       = 0.         ! decrease of solidus with water concentration (K)
+ddens_sol_liq_dimensional         = 500.       ! density difference solid-liquid (kg/m3)
+eta_magma_dimensional             = 10.        ! viscosity of liquid (for Darcy's law, in Pa.s)
+melt_segregation_mode             = 'old'      ! either 'old' or 'Abe'
+k0_dimensional                    = 3.e-10     ! permeability constant,'old' mode Darcy's law, = gs^2/C in below inputs
+melt_segregation_n                = 3.0        ! exponent for Abe-mode Darcy's law (Abe assumed 3.0)
+melt_segregation_C                = 1000.      ! 1/coefficient in permeability law (Abe assumed 1000 from McKenzie 1984)
+melt_segregation_gs               = 1.e-3      ! grain size for melt percolation law (Abe assumed 1 mm)
+trackTTGsource                    = .false.    ! checks if conditions for TTG formation are fulfilled (Moyen 2011 Lithos)
+liquidus_function                 = 'simple'
+solidus_function_basalt           = 'MoyenLowAndrault'
+liquidus_function_basalt          = 'Pertermann&Andr'
+effective_solidus_Moyen           = .false.
+wet_solidus_Moyen                 = .false.
+hydrated_basalt_Sizova            = .false.
+dry_basalt_Sizova                 = .false.
+delta_solidus_bas_TTG             = 100.! lower solidus of TTG compared to basalt (in K)
+cumulate_ei                       = .true.
+depletion                         = .false.
+SolidusLiquidusInterpolate        =.false.
+alpha_BasPyrTSolidusKink          = 0.3  ! These 4 parameters shape the solidus function
+alpha_PyrHarzTSolidusKink         = 0.2 ! between basalt, pyrolite and harzburgite end members
+alpha_BasPyrCompKink              = 0.2      ! The interpolation is now non-linear
+alpha_PyrHarzCompKink             = 0.7     ! see function Tsolidus_interp for further details
+BasWaterSolidusInterpNonLinearity = 0.15 ! Parameters for interpolation of the solidus
+HarzWaterSolidusInterpNonLinearity= 0.15 ! temperature in water saturation space
+PyrWaterSolidusInterpNonLinearity = 0.15 ! a parabola is added to the straight line
+BasPyrSolidusCompNonLinearity     = 0.15 ! see function Tsolidus_interp for further details
+maxPPrecompSolLiq                 = 140. ! GPa - solidii and liquidii are preceomputed up to this pressure
+solidus_dry_basalt                = 'Pertermann&Andr' !'Andrault'
+solidus_wet_basalt                = 'MoyenLowAndrault'
+solidus_dry_pyrolite              = 'simple'
+solidus_wet_pyrolite              = 'KesselLitasovEx'
+solidus_dry_harz                  = 'Maaloe04&Param'
+solidus_wet_harz                  = 'Maaloe04&Param'
+liquidus_basalt                   = 'Pertermann&Andr'
+liquidus_pyrolite                 = 'Fiquet2010'
+WaterSolub_LM_Harz                = 0.005 !wght%
+WaterSolub_LM_Bas                 = 0.005 !wght%
+WaterSolub_LM_TTG                 = 0.005 !wght%
+DeltaTSolDryWetHarz               = 200. ! arbitrary
+LowMantlDeltaTSolDryWetBasalt     = 258. ! delta T solidus between dry and wet in the LM -basalt
+LowMantlDeltaTSolDryWetPyrolite   = 250. ! delta T solidus between dry and wet in the LM -pyrolite
+DTsolHzPyrDry                     = 200.
+alpha_MeltFracBs                  = 1.2
+alpha_MeltFracHz                  = 1.2
+dTadjust_solidus_liquidus         = 0.0        ! dT adjustment due to different Fe content or other compositional difference
+
+! phase_change module
+! &phase
+effective_Cp_alpha      = .true.
+scale_PCdepths          = .false.
+g0_dimensional_PCdepths = 9.81
+D0_dimensional_PCdepths = 2890.e3
+nphase_systems          = 1
+sys_ol                  = 1       ! phase system meanings (also apply to viscosity parameters)
+sys_pxgt                = 2
+sys_melt_ol             = 3
+sys_melt_pxgt           = 4
+sys_prim                = 5
+sys_ccrust              = 6
+sys_metal               = 7
+sys_air                 = 8
+nphase(:)               = (/3,4,0,0,4,0,0,0/)
+phase_mode(:,1)         = (/'function  ','discont   ','discont   ','discont   '/)
+phase_mode(:,2)         = (/'function  ','eff_alpha ','eff_alpha ','discont   '/)
+phase_mode(:,3)         = (/'function  ','function  ','function  ','function  '/)
+phase_mode(:,4)         = (/'function  ','function  ','function  ','function  '/)
+phase_mode(:,5)         = (/'function  ','eff_alpha ','eff_alpha ','discont   '/)
+phase_mode(:,6)         = (/'function  ','function  ','function  ','function  '/)
+phase_mode(:,7)         = (/'function  ','function  ','function  ','function  '/)
+phase_mode(:,8)         = (/'function  ','function  ','function  ','function  '/)
+Tp0(:,1)                = (/2300.,1900.,1600.,0./)
+Tp0(:,2)                = (/2300.,1900.,1600.,1000./)
+Tp0(:,3)                = (/0., 0., 0., 0./)
+Tp0(:,4)                = (/0., 0., 0., 0./)
+Tp0(:,5)                = (/2300.,1900.,1600.,1000./)
+Tp0(:,6)                = (/0., 0., 0., 0./)
+Tp0(:,7)                = (/0., 0., 0., 0./)
+Tp0(:,8)                = (/0., 0., 0., 0./)
+dp0(:,1)                = (/2740.e3, 660.e3, 410.e3, 99./)
+dp0(:,2)                = (/2740.e3, 720.e3, 410.e3, 40.e3/)
+dp0(:,3)                = (/0., 0., 0., 0./)
+dp0(:,4)                = (/0., 0., 0., 0./)
+dp0(:,5)                = (/2740.e3, 720.e3, 410.e3, 40.e3/)
+dp0(:,6)                = (/0., 0., 0., 0./)
+dp0(:,7)                = (/0., 0., 0., 0./)
+dp0(:,8)                = (/0., 0., 0., 0./)
+drho_p(:,1)             = (/61.6, 400., 180., 0./)
+drho_p(:,2)             = (/61.6, 400., 150., 350./)
+drho_p(:,3)             = (/0., 0., 0., 0./)
+drho_p(:,4)             = (/0., 0., 0., 0./)
+drho_p(:,5)             = (/61.6, 400., 150., 350./)
+drho_p(:,6)             = (/0., 0., 0., 0./)
+drho_p(:,7)             = (/0., 0., 0., 0./)
+drho_p(:,8)             = (/0., 0., 0., 0./)
+clap(:,1)               = (/10.e6, -2.5e6, 2.5e6, 0./)
+clap(:,2)               = (/10.e6,  1.0e6, 1.0e6, 1.5e6/)
+clap(:,3)               = (/0., 0., 0., 0./)
+clap(:,4)               = (/0., 0., 0., 0./)
+clap(:,5)               = (/10.e6,  1.0e6, 1.0e6, 1.5e6/)
+clap(:,6)               = (/0., 0., 0., 0./)
+clap(:,7)               = (/0., 0., 0., 0./)
+clap(:,8)               = (/0., 0., 0., 0./)
+w_p(:,1)                = (/25.e3, 25.e3, 25.e3, 0./)
+w_p(:,2)                = (/25.e3, 75.e3, 75.e3, 25.e3/)
+w_p(:,3)                = (/0., 0., 0., 0./)
+w_p(:,4)                = (/0., 0., 0., 0./)
+w_p(:,5)                = (/25.e3, 75.e3, 75.e3, 25.e3/)
+w_p(:,6)                = (/0., 0., 0., 0./)
+w_p(:,7)                = (/0., 0., 0., 0./)
+w_p(:,8)                = (/0., 0., 0., 0./)
+Ol_frac_ref             = 0.6
+basalt_frac_ref         = 0.2
+
+! geoidstuff module
+! &geoid_in
+geoid_kernel_mode     = .false.
+geoid_depthrange_mode = .false.
+lmax                  = 16
+geoid_MinAnomalyDepth = 0.0
+geoid_MaxAnomalyDepth = BIG
+geoid_maxits          = 10
+geoid_errmax          = 0.01
+
+
+! plotpars module
+! &plot
+npix              = 200000
+plot_file_stem    = 'image'
+T_plot            = .false.
+dT_plot           = .false.
+t_superadiabatic  = .false.
+auto_t_scale      = .true.
+v_plot            = .false.
+p_plot            = .false.
+pd_plot           = .false.
+g_plot            = .false.
+rho_plot          = .false.
+eta_plot          = .false.
+rheo_plot         = .false.
+nrc_plot          = .false.
+c_plot            = .false.
+bs_plot           = .false.
+hz_plot           = .false.
+TTG_plot          = .false.
+cc_plot           = .false.
+f_plot            = .false.
+tcond_plot        = .false.
+Cp_plot           = .false.
+expan_plot        = .false.
+ph_plot           = .false.
+vm_plot           = .false.
+vd_plot           = .false.
+ah_plot           = .false.
+stress_plot       = .false.
+edot_plot         = .false.
+age_plot          = .false.
+ageEI_plot        = .false.
+nmelt_plot        = .false.
+nEI_plot          = .false.
+strain_plot       = .false.
+lyap_plot         = .false.
+air_plot          = .false.
+vacuum_plot       = .false.
+primordial_plot   = .false.
+residue_plot      = .false.
+grainsize_plot    = .false.
+oxides_plot       = .false.
+iron_plot         = .false.
+metal_plot        = .false.
+hpe_plot          = .false.
+impactor_plot     = .false.
+H_plot            = .false.
+K_Ar_plot         = .false.
+Sm_Nd_plot        = .false.
+U_Th_Pb_He_plot   = .false.
+Hf_W_plot         = .false.
+carbon_plot       = .false.
+nitrogen_plot     = .false.
+water_plot        = .false.
+rhs_plot          = .false.
+tra_plot          = .false.
+trapercell_plot   = .false.
+z_xyslice         = 0.5
+dots              = .true.
+imgtype           = 'png'
+!palettes(:)      = (/'plasma  ','puor    ','viridis '/)   ! grey/gray,jet,moreland,plasma,puor or viridis
+palettes(:)       = (/'jet     ','jet     ','jet     '/)   ! jet = the old rgb palette
+background_colour = 'black'                                ! 'black', 'white' or anything else to give grey/gray
+
+
+! tracerstuff module
+! &tracersin
+tracers_advord                  = 2
+tracers_interp2ord              = .true.
+tracers_everywhere              = .true.
+tracers_temperature             = .false.
+tracers_viscosity               = .false.
+tracers_strain                  = .false.
+tracers_plastic_strain          = .false.
+trastrain_diagnostics           = .false.
+traedot_Taras_interp            = .false.
+traedot_Taras_exps              = 0.94
+tracers_timemelt                = .false.
+tracers_timeEruptIntrude        = .false.
+tracers_recstartpos             = .false.
+tracers_weakcrust               = .false.
+tracers_weakfault               = .false.
+tracers_iron                    = .false.
+track_grainsize                 = .false.
+ddens_SiO2                      = 0.0
+ddens_MgO                       = 0.0
+ddens_FeO                       = 0.0
+ddens_XO                        = 0.0
+dTmelting_dFeO                  = 0.0
+traceelement_hpe                = .false.
+traceelement_impactor           = .false.
+traceelement_water              = .false.
+traceelement_K_Ar               = .false.
+traceelement_Sm_Nd              = .false.
+traceelement_U_Th_Pb_He         = .false.
+traceelement_Hf_W               = .false.
+traceelement_carbon             = .false.
+traceelement_nitrogen           = .false.
+Dpartition_FeO                  = 1.0
+Dpartition_hpe                  = 1.0
+Dpartition_water                = 1.0
+Dpartition_K                    = 1.0
+Dpartition_Ar                   = 1.0
+Dpartition_Sm                   = 1.0
+Dpartition_Nd                   = 1.0
+Dpartition_U                    = 1.0
+Dpartition_Th                   = 1.0
+Dpartition_Pb                   = 1.0
+Dpartition_He                   = 1.0
+Dpartition_W                    = 1.0
+Dpartition_Hf                   = 1.0
+Dpartition_carbon               = 1.0
+Dpartition_nitrogen             = 1.0
+Dpartition_BasToTTG_FeO         = 1.0
+Dpartition_BasToTTG_hpe         = 1.0
+Dpartition_BasToTTG_water       = 1.0
+Dpartition_BasToTTG_K           = 1.0
+Dpartition_BasToTTG_Ar          = 1.0
+Dpartition_BasToTTG_U           = 1.0
+Dpartition_BasToTTG_Th          = 1.0
+Dpartition_BasToTTG_Pb          = 1.0
+Dpartition_BasToTTG_He          = 1.0
+Dpartition_BasToTTG_carbon      = 1.0
+Dpartition_BasToTTG_nitrogen    = 1.0
+Dpartition_BasToTTG_Sm          = 1.0
+Dpartition_BasToTTG_Nd          = 1.0
+Dpartition_BasToTTG_W           = 1.0
+Dpartition_BasToTTG_Hf          = 1.0
+Dpartition_sTTG2mTTG_FeO        = 1.0
+Dpartition_sTTG2mTTG_hpe        = 1.0
+Dpartition_sTTG2mTTG_water      = 1.0
+Dpartition_sTTG2mTTG_K          = 1.0
+Dpartition_sTTG2mTTG_Ar         = 1.0
+Dpartition_sTTG2mTTG_U          = 1.0
+Dpartition_sTTG2mTTG_Th         = 1.0
+Dpartition_sTTG2mTTG_Pb         = 1.0
+Dpartition_sTTG2mTTG_He         = 1.0
+Dpartition_sTTG2mTTG_carbon     = 1.0
+Dpartition_sTTG2mTTG_nitrogen   = 1.0
+Dpartition_sTTG2mTTG_Sm         = 1.0
+Dpartition_sTTG2mTTG_Nd         = 1.0
+Dpartition_sTTG2mTTG_W          = 1.0
+Dpartition_sTTG2mTTG_Hf         = 1.0
+init_iron_fraction_solid        = 0.1
+initialConcentration_40K        = 0.0                           ! These are in atoms per gram of host rock
+initialConcentration_40Ar       = 0.0
+initialConcentration_36Ar       = 0.0
+initialConcentration_147Sm      = 0.0
+initialConcentration_146Sm      = 0.0
+initialConcentration_144Nd      = 0.0
+initialConcentration_143Nd      = 0.0
+initialConcentration_142Nd      = 0.0
+initialConcentration_238U       = 0.0
+initialConcentration_235U       = 0.0
+initialConcentration_232Th      = 0.0
+initialConcentration_208Pb      = 0.0
+initialConcentration_207Pb      = 0.0
+initialConcentration_206Pb      = 0.0
+initialConcentration_204Pb      = 0.0
+initialConcentration_4He        = 0.0
+initialConcentration_3He        = 0.0
+initialConcentration_182Hf      = 0.0
+initialConcentration_182W       = 0.0
+initialConcentration_184W       = 0.0
+outgas_fraction_water           = 1.0
+outgas_fraction_Ar              = 1.0
+outgas_fraction_He              = 1.0
+outgas_fraction_carbon          = 1.0
+outgas_fraction_nitrogen        = 1.0
+ingas_water                     = .false.
+WaterSaturationConnolly         = .false.
+WaterFullSatSurfIngas           = .false. ! would saturate rocks with water at the surface
+ingas_depth                     = 10.e3                         ! in m (if dimensional)
+topH2O_val                      = 0.1                           ! weight% Used if WaterFullSatSurfIngas==.false. --
+initialConcentration_water      = 1.0                           
+IntrudedBasaltHydrationFraction = 0.0
+water_bouffard                  = .false.
+diffusion_water                 = .false.                       ! used when water_bouffard
+Zdiff_h2o                       = 0.1                           ! used when water_bouffard
+diff_h2o                        = 0.5                           ! used when water_bouffard
+water_at_top                    = .true.                        ! used when water_bouffard
+tracers_noadvection             = .false.
+tracers_horizontaladvection     = .false.
+tracers_merge_whole_cell        = .true.                        ! if .false. then it merges nearest-neighbours only
+tracers_merge_supercells        = .false.                       ! if .true. then considers out-of-cell tracers for merging
+merge_erupting_tracers          = .false.                       ! true = > merge erupting with existing; false = >make new tracers for new crust
+tracers_merge_typedifference           = 0.1                    ! permitted maximum difference in type for merging
+tracers_merge_radius_cutoff_factor     = 1.0                    ! previously radius_cutoff_factor in tracers.f90. 1 means 0.5 grid spacings (in shortest direction)
+tracers_merge_radius_cutoff_factor_TTG = 1.0                    !  same for TTG
+tracers_merge_EMPOS_cutoff             = 5.0                    ! max diff. in emplacement (EMPOS) to not merge erupted tracers(1) with intruded ones(2). Recommended (harz_bas_TTG_cc): 0.1
+tracers_merge_TTGSOURCEPOS_cutoff      = 0.05                   ! considers TTG source type (TTGSOURCEPOS:1,2,3) while merging. Recommended: 0.05
+DistInstantTracerMerge                 = 1e-3                   ! max distance for tra considered at identical position
+weakcrust_maxdepth              = 0.3
+weak_material                   = 'basalt'
+oxides_compositions             = .false.                       ! define compositions using oxides rather than fixed endmembers
+oxides_basalt                   = (/50.61, 10.54, 7.71, 31.14/) ! Hirose, mole%
+oxides_harz                     = (/43.48, 46.45, 8.08,  1.99/) ! pyrolite - 21% Hirose basalt
+! oxides_ccrust                 = (/66.62,  2.48, 5.04, 25.86/)! Rudnick 2003, wt%
+oxides_ccrust                   = (/78.36,  1.15, 1.53, 18.96/) ! wikipedia granite, mole%
+oxides_prim                     = (/45.00, 38.80, 8.00,  8.20/) ! pyrolite according to Ringwood
+basalt_harzburgite              = .false.                       ! include basalt-hz (the default compositional variation)
+harz_bas_TTG_cc                 = .false.
+primordial_layer                = .false.                       ! 2nd C field using tracers
+continental_crust               = .false.                       ! whether to include continental crust (= quartz)
+metal                           = .false.                       ! whether to include metal (iron)
+ntracers                        = 50                            ! tracer particles
+ntracers_per_cell               = -1                            ! alternative to ntracers
+imode_tra                       = 'even+ran'
+imode_primordial                = 'layer'
+imode_metal                     = 'top_layer'
+B_primordial                    = 0.0
+d_primordial                    = 0.1                           ! depth of primordial anomaly
+r_primordial                    = 0.1                           ! radius of primordial sphere
+B_basalt                        = 0.0
+B_metal                         = 0.0
+d_metal                         = 0.0
+B_ccrust                        = 0.0
+d_ccrust                        = 0.0
+B_archean                       = 0.0
+B_proterozoic                   = 0.0
+B_phanerozoic                   = 0.0
+B_Fe                            = 0.0
+d_archean                       = 0.1
+d_phanerozoic                   = 0.1
+d_proterozoic                   = 0.1
+w_crust                         = 0.0
+d_crust                         = 0.1
+B_TTG                           = 0.
+B_cc                            = 0.
+Ctr_truncate                    = .false.
+Ctr_lininterp                   = .true.
+Ttr_lininterp                   = .true.
+Visctr_lininterp                = .true.
+
+
+! atmospherestuff module
+! &atm_stuff
+atm_model = 'simple'
+
+
+! magma_oceans module
+! &magma_oceans_in
+init_thick_TMO          = 0.0
+init_thick_BMO          = 0.0
+partitioning_with_KD    = .true.
+init_iron_fraction_bulk = 0.1
+init_iron_fraction_BMO  = 0.1
+init_iron_fraction_TMO  = 0.1
+fract_cryst_profile     = .false.
+
+
+! postpro module
+! &postprocessing
+perform_postprocessing = .false.
+keep_freq              = 1      ! post-processing parameters
+keep_freq_tra          = 1
+read_only              = .true. ! will not create the +hdf5_PostPro folder, just reads
+whilerunning           = .true. ! will not do the postprocessing for the last hdf5 files by security
+
+! which fields should be treated
+PostPro_t          = .false. ! temperature
+PostPro_c          = .false. ! composition
+PostPro_cont       = .false. ! continents
+PostPro_rheo       = .false. ! rheology (diffusion vs dislocation)
+PostPro_ph         = .false. ! phase field
+PostPro_bs         = .false. ! basalt fraction
+PostPro_hz         = .false. ! harzburgite fraction
+PostPro_primordial = .false. ! primordial fraction
+PostPro_f          = .false. ! melt fraction
+PostPro_rho        = .false. ! density
+PostPro_svel       = .false. ! seismic velocities
+PostPro_pvel       = .false.
+PostPro_bvel       = .false.
+PostPro_vp         = .false. ! velocity & pressure
+PostPro_vd         = .false. ! viscous dissipation
+PostPro_eta        = .false. ! viscosity
+PostPro_edot       = .false. ! strain rate (used in some volume averaging! )
+PostPro_age        = .false. ! age (since last melted)
+PostPro_stress     = .false. ! CCC
+PostPro_topo       = .false. ! topography (CMB & surface)
+PostPro_crust      = .false. ! CCC ! crustal thickness
+PostPro_g          = .false. ! geoid and topography corrected for self-gravitation
+PostPro_hpe        = .false.
+PostPro_tra        = .false. ! tracers
+PostPro_water      = .false.
+PostPro_grainsize  = .false.
+PostPro_trapercell = .false.
+PostPro_TTG        = .false.
+PostPro_cc         = .false.
+
+
+! gpukernels module
+! &gpukernelsin
+use_gpu       = .false.
+gpu_test_mode = .false.
+gpu_threshold = 25
+gpu_test_tol  = 1e-12
