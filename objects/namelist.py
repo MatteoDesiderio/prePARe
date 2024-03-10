@@ -4,11 +4,13 @@ from helpers import _get_raw_lines
 from .parameter import Parameter
 from .parameterFactory import dispatch
 
+
+def _join_split_arrays(parameters):
+    for p in parameters:
+        splitname = p.name.rsplit("(")
+
 class Namelist:
     def __init__(self, parameters=[]):
-        # TO DO: some method called when initialized (at the very least)
-        # that assigns any array in the list the correct shape (which is
-        # another parameter in the list)
         if not isinstance(parameters, list):
             raise TypeError
 
@@ -21,7 +23,8 @@ class Namelist:
 
         except IndexError:
             name = ""
-
+            
+        # dont remember what this is for - avoid duplicates?
         names_seen = []
         seen = []
         for p in parameters[::-1]:
@@ -29,13 +32,12 @@ class Namelist:
             if not(pn in names_seen):
                 seen += [p]
                 names_seen += [pn]
-
         if seen:
             parameters = seen[::-1]
-
+        # ------------------------------
+        
         self.parameters = parameters
         self.name = name
-    
     
     def __add__(self, other):
         if isinstance(other, Parameter):
@@ -44,7 +46,8 @@ class Namelist:
             if myname == "":
                 return Namelist([other])
             elif name == self.name:
-                new = self.parameters + [other]
+                if not other in self.parameters: 
+                    new = self.parameters + [other]
                 return Namelist(new)
             else:
                 raise ValueError("Attempting to join parameters from " +
@@ -80,9 +83,9 @@ class Namelist:
             if no_nline[0] != "!":
                 sel_lines.append(no_nline)
                 nameP, valueP = no_nline.rsplit("=")
-                param = dispatch(nameP, valueP, name)
+                param = dispatch(nameP, valueP, name, parameters)
                 parameters.append(param)
-                
+                      
         return Namelist(parameters)
                 
     @staticmethod

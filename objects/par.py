@@ -1,7 +1,7 @@
 """
 The par file class
 """
-from helpers import _get_names
+from helpers import _get_names, _fill_in_array_shapes
 from .namelist import Namelist
 
 class Par:
@@ -15,7 +15,9 @@ class Par:
     
     def from_default(self, path):
         names = _get_names(path)
-        self.namelists = [Namelist.from_default(path, n) for n in names]
+        namelists = [Namelist.from_default(path, n) for n in names]
+        
+        self.namelists = _fill_in_array_shapes(namelists)
     
     def from_file(self, path):
         """
@@ -32,9 +34,7 @@ class Par:
 
         """   
         names = _get_names(path)
-        self.namelists = [Namelist.from_par_file(path, n) for n in names]
-    
-    
+        self.namelists = [Namelist.from_par_file(path, n) for n in names]        
         
         
         

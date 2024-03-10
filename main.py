@@ -63,14 +63,14 @@ class Window(qtw.QMainWindow):
         splitter.addWidget(mainStack)
         #splitter.setStretchFactor(1, 5)
         dx = whole_screen[3]
-        splitter.setSizes([int(dx / 10), int(dx / 2)])
+        splitter.setSizes([int(dx / 100), int(67 * dx / 100)])
 
         self.setCentralWidget(splitter)
         self.show()  # draw the main window
 
     def get_geom_from_screen(self):
         dx, dy = self.screensize.width(), self.screensize.height()
-        return 0, 0, dx - 400, dy
+        return 0, 0, dx, dy
 
     def close_application(self):
         """

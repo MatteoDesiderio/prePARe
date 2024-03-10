@@ -24,6 +24,7 @@ def _get_fmt_(value):
         raise TypeError("Value should be bool, int, float or str")
     return s
 
+
 def formatSingle(value, dtype):
     if dtype == str:
         s = "%s" % value
@@ -43,21 +44,23 @@ def formatSingle(value, dtype):
         raise TypeError("Value should be bool, int, float or str")
     return s
 
+
 def formatArray(value, dtype):
     s = "%s, " * len(value)
     s = s[:-2]
     values = [formatSingle(v, dtype) for v in value]
     return s % (*values,)
 
+
 class Formatter_:
     def __init__(self, value, name):
         self.value = value
         self.name = name
-    
+
     def get_formatted(self):
         value = self.value
         name = self.name
-        
+
         if isinstance(value, np.ndarray):
             if value.ndim == 1:
                 n = ["%s(%i)" % (name, i + 1) for i in range(len(value))]
@@ -67,14 +70,15 @@ class Formatter_:
                 s = [", ".join([_get_fmt_(vv) for vv in v]) for v in value]
             else:
                 raise NotImplementedError("ndim of parameter must be <= 2")
-            
+
             _zip = zip(n, s)
             res = "\n".join(["%s=%s" % (nn, ss) for nn, ss in _zip])
-            
+
         else:
             res = "%s=%s" % (name, _get_fmt_(value))
-        
+
         return res
+
 
 class Parameter:
     def __init__(self, name, value, parent_namelist):
@@ -83,22 +87,33 @@ class Parameter:
         self.parent_namelist = parent_namelist
 
 
+class ParameterShape:
+    def __init__(self, parametersForShape=[["", None]]):
+        self.names = [ps[0] for ps in parametersForShape]
+        self.dimensions = [ps[1] 
+                           for ps in parametersForShape]
+
+
 class ParameterSingle(Parameter):
     def __init__(self, name, value, parent_namelist, dtype):
         super().__init__(name, value, parent_namelist)
         self.dtype = dtype
-        
-        
+
     def __repr__(self):
         s = formatSingle(self.value, self.dtype)
-        return "%s=%s" % (self.name,  s)
+        return "%s=%s" % (self.name, s)
+
 
 class ParameterArray(Parameter):
-    def __init__(self, name, value, parent_namelist, dtype):
+    def __init__(self, name, value, parent_namelist, dtype, 
+                 shape=ParameterShape()):
+        if not isinstance(shape, ParameterShape):
+            raise ValueError("Shape must be instance of" +
+                             " 'ParameterShape'. ")
         super().__init__(name, value, parent_namelist)
         self.dtype = dtype
+        self.shape = shape
 
-            
     def __repr__(self):
         s = formatArray(self.value, self.dtype)
-        return "%s=%s" % (self.name,  s)
+        return "%s=%s" % (self.name, s)
