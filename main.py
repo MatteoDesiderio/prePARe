@@ -27,6 +27,8 @@ class Window(qtw.QMainWindow):
         self.defaultPar = DefaultPar().default()
         self.available_namelists = self.defaultPar.namelists
         self.names = [n.name for n in self.available_namelists]
+        
+        
         self.screensize = screensize
 
         # window size and position

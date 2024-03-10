@@ -10,5 +10,5 @@ class DefaultPar(Par):
     @staticmethod
     def default():
         par = DefaultPar()
-        par.from_default("defaults_include")
+        par.from_file("defaults_include")
         return par
